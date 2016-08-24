@@ -7,6 +7,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
   curl \
   apt-utils \
   build-essential \
+  python-dev \
   bluetooth \
   bluez \
   bluez-firmware \
