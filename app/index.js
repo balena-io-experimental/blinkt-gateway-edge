@@ -79,7 +79,7 @@
                                             let result = bleno.Characteristic.RESULT_UNLIKELY_ERROR;
                                             callback(result);
                                         } else {
-                                            ledstrip.colors(function() {
+                                            ledstrip.colorize(function() {
                                                 let result = bleno.Characteristic.RESULT_SUCCESS;
                                                 callback(result);
                                             });

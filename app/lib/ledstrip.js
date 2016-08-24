@@ -16,7 +16,7 @@
 
     ledstrip.prototype.init = function (callback) {
       let self = this;
-      self.colors(function() {
+      self.colorize(function() {
         leds.setup();
         leds.clearAll();
         self.initialized = true;
@@ -48,7 +48,7 @@
       callback();
     };
 
-    ledstrip.prototype.colors = function (callback) {
+    ledstrip.prototype.colorize = function (callback) {
       let self = this;
       fs.statSync('/data/colors.json', function(err, stat) {
           if(err == null) {
