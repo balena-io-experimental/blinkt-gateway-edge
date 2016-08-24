@@ -39,7 +39,7 @@ CMD ["bash", "/usr/src/app/start.sh"]
 COPY "$SOURCEFOLDER/app/start.sh" ./
 
 # Move app to filesystem
-COPY "$SOURCEFOLDER/app/index.js" ./
+COPY "$SOURCEFOLDER/app/" ./
 
 ## uncomment if you want systemd
 ENV INITSYSTEM on
