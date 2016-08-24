@@ -3,7 +3,7 @@
 (function() {
     'use strict';
 
-    const ledstrip = require('/usr/src/app/lib/ledstrip.js');
+    const ledstrip = require(__dirname+'/lib/ledstrip.js');
 
     ledstrip.init(function init() {
       ledstrip.progress(7,'default',function progress() {
