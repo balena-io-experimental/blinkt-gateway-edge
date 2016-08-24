@@ -1,0 +1,23 @@
+{
+  "name": "blinkt-gateway-edge",
+  "version": "0.0.1",
+  "description": "a Proof of Concept resin.io application aiming to showcase dependent devices support - Dependent Device part",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/resin-io-playground/Blinkt-gateway-edge.git"
+  },
+  "author": "Carlo Maria Curinga <carlo@resin.io>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/resin-io-playground/Blinkt-gateway-edge/issues"
+  },
+  "homepage": "https://github.com/resin-io-playground/Blinkt-gateway-edge#readme",
+  "dependencies": {
+    "bleno": "^0.4.0",
+    "hex-rgb": "^1.0.0"
+  }
+}

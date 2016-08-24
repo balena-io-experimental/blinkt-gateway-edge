@@ -1,0 +1,44 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-node:slim
+
+# Install apt deps
+RUN apt-get clean && apt-get update && apt-get install -y \
+  git \
+  wget \
+  curl \
+  apt-utils \
+  build-essential \
+  bluetooth \
+  bluez \
+  bluez-firmware \
+  libbluetooth-dev \
+  libudev-dev && rm -rf /var/lib/apt/lists/*
+
+# Disable bluetooth service - we will manually start it later
+RUN systemctl disable bluetooth
+
+# Save source folder
+RUN printf "%s\n" "${PWD##}" > SOURCEFOLDER
+
+# Move to /usr/src/app
+WORKDIR /usr/src/app
+
+# Move config data to assets folder
+COPY "$SOURCEFOLDER/assets/" /assets
+
+# Move package to filesystem
+COPY "$SOURCEFOLDER/app/package.json" ./
+
+# Install NodeJS dependencies via NPM
+RUN JOBS=MAX npm i --unsafe-perm --production && npm cache clean
+
+# Start app
+CMD ["bash", "/usr/src/app/start.sh"]
+
+# Copy the start.sh file
+COPY "$SOURCEFOLDER/app/start.sh" ./
+
+# Move app to filesystem
+COPY "$SOURCEFOLDER/app/index.js" ./
+
+## uncomment if you want systemd
+ENV INITSYSTEM on
