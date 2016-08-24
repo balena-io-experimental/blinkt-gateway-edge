@@ -48,7 +48,7 @@
       callback();
     };
 
-    ledstrip.prototype.colors = function () {
+    ledstrip.prototype.colors = function (callback) {
       let self = this;
       fs.statSync('/data/colors.json', function(err, stat) {
           if(err == null) {

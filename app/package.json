@@ -18,6 +18,8 @@
   "homepage": "https://github.com/resin-io-playground/Blinkt-gateway-edge#readme",
   "dependencies": {
     "bleno": "^0.4.0",
-    "hex-rgb": "^1.0.0"
+    "hex-rgb": "^1.0.0",
+    "node-blinkt": "^1.0.1",
+    "jsonfile": "^2.3.1"
   }
 }
