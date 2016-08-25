@@ -70,23 +70,17 @@
                                     callback(this.RESULT_ATTR_NOT_LONG);
                                 }
                                 let colors = JSON.parse(decoder.write(data));
-                                if (colors.length != 6) {
-                                    let result = bleno.Characteristic.RESULT_UNLIKELY_ERROR;
-                                    callback(result);
-                                } else {
-                                    jsonfile.writeFile('/data/colors.json', colors, function(err) {
-                                        if (err) {
-                                            let result = bleno.Characteristic.RESULT_UNLIKELY_ERROR;
-                                            callback(result);
-                                        } else {
-                                            ledstrip.colorize(function() {
-                                                let result = bleno.Characteristic.RESULT_SUCCESS;
-                                                callback(result);
-                                            });
-                                        }
-                                    })
-
-                                }
+                                  jsonfile.writeFile('/data/colors.json', colors, function(err) {
+                                      if (err) {
+                                          let result = bleno.Characteristic.RESULT_UNLIKELY_ERROR;
+                                          callback(result);
+                                      } else {
+                                          ledstrip.colorize(function() {
+                                              let result = bleno.Characteristic.RESULT_SUCCESS;
+                                              callback(result);
+                                          });
+                                      }
+                                  })
                             }
                         })
                     ]
