@@ -9,7 +9,7 @@
     const ledstrip = require(__dirname + '/lib/ledstrip.js');
     const hw = require(__dirname + '/lib/hw.js');
 
-    ledstrip.init(function init() {
+    ledstrip.init(function() {
         ledstrip.progress(7, 'default', function progress() {
             console.log('Default light pattern applied');
         });
@@ -30,11 +30,11 @@
         if (!error) {
             bleno.setServices([
                 new bleno.PrimaryService({
-                    uuid: 'F1D460627FD34C17B0969E8D61E15581`',
+                    uuid: '9f497cb0b769c1276841382d29c0af95`',
                     characteristics: [
                         // Read device serial number
                         new bleno.Characteristic({
-                            uuid: 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1',
+                            uuid: 'fffffffffffffffffffffffffffffff1',
                             properties: ['read'],
                             descriptors: [
                                 new bleno.Descriptor({
@@ -57,7 +57,7 @@
                         }),
                         // Update colors
                         new bleno.Characteristic({
-                            uuid: 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2',
+                            uuid: 'fffffffffffffffffffffffffffffff2',
                             properties: ['write'],
                             descriptors: [
                                 new bleno.Descriptor({
