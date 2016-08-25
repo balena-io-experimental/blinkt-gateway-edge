@@ -30,7 +30,7 @@
         return false;
       }
       for (let i = 0; i < value; i++) {
-        leds.setPixel(i, pickedColor[0],  pickedColor[1],  pickedColor[2], 0.5);
+        leds.setPixel(i, pickedColor.r,  pickedColor.g,  pickedColor.b, 0.5);
       }
       leds.sendUpdate();
       callback();
