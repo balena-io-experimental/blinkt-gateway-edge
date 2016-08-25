@@ -18,7 +18,7 @@
     bleno.on('stateChange', function(state) {
         console.log('BLE stateChange: ' + state);
         if (state === 'poweredOn') {
-            bleno.startAdvertising("blinkt", ['F1D46062-7FD3-4C17-B096-9E8D61E15581']);
+            bleno.startAdvertising("blinkt", ['F1D460627FD34C17B0969E8D61E15581']);
         } else {
             console.log('BLE advertising stopped');
             bleno.stopAdvertising();
@@ -30,11 +30,11 @@
         if (!error) {
             bleno.setServices([
                 new bleno.PrimaryService({
-                    uuid: 'F1D46062-7FD3-4C17-B096-9E8D61E15581`',
+                    uuid: 'F1D460627FD34C17B0969E8D61E15581`',
                     characteristics: [
                         // Read device serial number
                         new bleno.Characteristic({
-                            uuid: 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF1',
+                            uuid: 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1',
                             properties: ['read'],
                             descriptors: [
                                 new bleno.Descriptor({
@@ -57,7 +57,7 @@
                         }),
                         // Update colors
                         new bleno.Characteristic({
-                            uuid: 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFF2',
+                            uuid: 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2',
                             properties: ['write'],
                             descriptors: [
                                 new bleno.Descriptor({
