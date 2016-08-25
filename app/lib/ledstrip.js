@@ -56,11 +56,11 @@
           } else {
               self.colors = JSON.parse(fs.readFileSync("/assets/colors.json"));
           }
+          for (var key in self.colors) {
+            self.colors.key = hexRgb(obj[key]);
+          }
+          callback();
       });
-      for (var key in self.colors) {
-        self.colors.key = hexRgb(obj[key]);
-      }
-      callback();
     };
 
 
