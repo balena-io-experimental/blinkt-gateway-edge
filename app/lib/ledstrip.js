@@ -50,7 +50,7 @@
 
     ledstrip.prototype.colorize = function (callback) {
       let self = this;
-      fs.statSync('/data/colors.json', function(err, stat) {
+      fs.stat('/data/colors.json', function(err, stat) {
           if(err == null) {
               self.colors = JSON.parse(fs.readFileSync("/data/colors.json"));
           } else {
