@@ -10,7 +10,7 @@
     const hw = require(__dirname + '/lib/hw.js');
 
     ledstrip.init(function() {
-        ledstrip.progress(7, 'default', function progress() {
+        ledstrip.progress(8, 'default', function progress() {
             console.log('Default light pattern applied');
         });
     });
@@ -18,7 +18,7 @@
     bleno.on('stateChange', function(state) {
         console.log('BLE stateChange: ' + state);
         if (state === 'poweredOn') {
-            bleno.startAdvertising("blinkt", ['F1D460627FD34C17B0969E8D61E15581']);
+            bleno.startAdvertising("blinkt", ['9f497cb0b769c1276841382d29c0af95']);
         } else {
             console.log('BLE advertising stopped');
             bleno.stopAdvertising();
