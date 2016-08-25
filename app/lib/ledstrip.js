@@ -4,7 +4,6 @@
     'use strict';
 
     const fs = require("fs");
-    const hexRgb = require('hex-rgb');
     const Blinkt = require('node-blinkt');
     const leds = new Blinkt();
 
@@ -43,7 +42,7 @@
       if (!self.initialized) {
         return false;
       }
-      leds.setPixel(value, pickedColor[0],  pickedColor[1],  pickedColor[2], 0.5);
+      leds.setPixel(value, pickedColor.r,  pickedColor.g,  pickedColor.b, 0.5);
       leds.sendUpdate();
       callback();
     };
@@ -55,9 +54,6 @@
               self.colors = JSON.parse(fs.readFileSync("/data/colors.json"));
           } else {
               self.colors = JSON.parse(fs.readFileSync("/assets/colors.json"));
-          }
-          for (var key in self.colors) {
-            self.colors.key = hexRgb(obj[key]);
           }
           callback();
       });

@@ -1,8 +1,32 @@
 {
-    "default": "7A3D7C",
-    "primary": "337AB7",
-    "success": "5CB85C",
-    "info": "5BC0DE",
-    "warning": "F0AD4E",
-    "danger": "D9534F"
+    "default": {
+        "r": 122,
+        "g": 61,
+        "b": 124
+    },
+    "primary": {
+        "r": 51,
+        "g": 122,
+        "b": 183
+    },
+    "success": {
+        "r": 92,
+        "g": 184,
+        "b": 92
+    },
+    "info": {
+        "r": 91,
+        "g": 192,
+        "b": 222
+    },
+    "warning": {
+        "r": 240,
+        "g": 173,
+        "b": 78
+    },
+    "danger": {
+        "r": 217,
+        "g": 83,
+        "b": 79
+    }
 }
